@@ -1,0 +1,8 @@
+{
+  "name": "osu wiki",
+  "short_name": "osu wiki",
+  "start_url": "/osuwiki/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f78599"
+}

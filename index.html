@@ -4,15 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>osu wiki</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/osuwiki/apple-touch-icon.png">
+  <link rel="icon" sizes="32x32" href="/osuwiki/favicon-32x32.png">
+  <link rel="icon" sizes="16x16" href="/osuwiki/favicon-16x16.png">
   <link rel="stylesheet" href="/osuwiki/main.css">
+  <link rel="manifest" href="/osuwiki/manifest.json">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="osu wiki">
+  <meta property="og:description" content="osu!の攻略サイト">
+  <meta property="og:url" content="https://yukinyaaa.github.io/osuwiki/">
+  <meta property="og:image" content="https://yukinyaaa.github.io/osuwiki/share.png">
+  <meta property="og:site_name" content="osu wiki">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@yuki_osu_lol">
   <script src="/osuwiki/main.js"></script>
+  <script src="/osuwiki/getwiki.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <header>
-    <div class="icon">osu wiki</div>
+    <a href="/osuwiki/" class="icon">osu wiki</a>
   </header>
   <nav>
-    <a href="/osuwiki/" class="top" hidden>osu wiki</a>
+    <a href="/osuwiki/" class="top">osu wiki</a>
     <a href="/osuwiki/">トップページ</a>
     <a href="/osuwiki/recommend">おすすめ記事</a>
     <a href="/osuwiki/tags">タグ一覧</a>
@@ -27,7 +41,16 @@
       <a href="/osuwiki/pages">全ページ一覧</a>
     </div>
   </nav>
+  <main>
+    <div class="header">
+      <div class="dir">
+        <a href="/osuwiki/">トップ</a>
+      </div>
+      <div class="time"></div>
+    </div>
+    <div class="wiki"></div>
+  </main>
   <div style="height: 500vh;"></div>
-  <div class="page-top" hidden></div>
+  <div class="page-top"></div>
 </body>
 </html>

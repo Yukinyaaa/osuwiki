@@ -3,9 +3,6 @@
 * {
   box-sizing: border-box;
 }
-*[hidden] {
-  display: none !important;
-}
 
 body {
   margin: 0;
@@ -29,6 +26,7 @@ header {
 }
 header .icon {
   font-size: 30px;
+  color: black;
 }
 
 nav {
@@ -53,6 +51,7 @@ nav > a {
 }
 nav > a.top {
   font-size: 22px;
+  display: none;
 }
 nav > a:not(.top):before {
   content: "";
@@ -86,6 +85,7 @@ nav .hamburger .icon {
   height: 2.5px;
   background-color: white;
   z-index: 1;
+  transition: 0.25s;
 }
 nav .hamburger .icon:before {
   width: 25px;
@@ -94,6 +94,7 @@ nav .hamburger .icon:before {
   content: "";
   position: relative;
   display: block;
+  transition: 0.25s;
   top: -10px;
 }
 nav .hamburger .icon:after {
@@ -103,6 +104,7 @@ nav .hamburger .icon:after {
   content: "";
   position: relative;
   display: block;
+  transition: 0.25s;
   top: 7px;
 }
 nav .menu {
@@ -129,13 +131,38 @@ nav .menu a {
   padding: 10px;
 }
 
+main {
+  width: 86vw;
+  height: 100vh;
+  padding-left: 7vw;
+  margin-top: 10px;
+}
+main .header {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid black;
+  font-size: 15px;
+}
+main .header .dir a {
+  color: black;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+main .header .dir a:hover {
+  color: #d2691e;
+}
+main .header .time {
+  margin-left: auto;
+}
+
 .page-top {
   width: 50px;
   height: 50px;
   position: fixed;
   right: 25px;
   bottom: 25px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border: solid 2px black;
@@ -149,6 +176,8 @@ nav .menu a {
 }
 .page-top:before {
   content: "↑";
+  position: relative;
+  top: -1px;
   font-weight: bold;
   font-size: 18px;
   transition: 0.15s;
@@ -163,13 +192,14 @@ nav .menu a {
   bottom: 22.5px;
 }
 
+body.scroll nav > a.top {
+  display: block;
+}
+body.scroll .page-top {
+  display: flex;
+}
+
 @media screen and (max-width: 750px) {
-  nav.menu-show {
-    position: fixed;
-  }
-  nav.menu-show .top {
-    display: block !important;
-  }
   nav > a:not(.top) {
     display: none;
   }
@@ -179,12 +209,40 @@ nav .menu a {
   nav .menu {
     display: flex;
   }
-  nav .menu.menu-show {
+  main {
+    width: 100%;
+    padding-left: 0;
+  }
+  main .header {
+    padding: 0 7vw;
+  }
+  main .wiki {
+    padding: 0 7vw;
+  }
+  body.menu-show header .icon {
+    display: none;
+  }
+  body.menu-show nav {
+    position: fixed;
+  }
+  body.menu-show nav .top {
+    display: block !important;
+  }
+  body.menu-show nav .hamburger .icon {
+    background-color: transparent;
+  }
+  body.menu-show nav .hamburger .icon:before {
+    transform: translateY(9.5px) rotate(45deg);
+  }
+  body.menu-show nav .hamburger .icon:after {
+    transform: translateY(-9.5px) rotate(-45deg);
+  }
+  body.menu-show nav .menu {
     width: 100%;
     top: 44px;
     opacity: 1;
   }
-  .page-top.menu-show {
+  body.menu-show .page-top {
     display: none;
   }
 }/*# sourceMappingURL=main.css.map */

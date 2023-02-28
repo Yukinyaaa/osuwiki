@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
 * {
   box-sizing: border-box;
-  &[hidden] {
-    display: none !important;
-  }
 }
 body {
   margin: 0;
@@ -23,6 +20,7 @@ header {
   
   & .icon {
     font-size: 30px;
+    color: black;
   }
 }
 nav {
@@ -47,6 +45,7 @@ nav {
     
     &.top {
       font-size: 22px;
+      display: none;
     }
     &:not(.top):before {
       content: "";
@@ -81,6 +80,7 @@ nav {
       height: 2.5px;
       background-color: white;
       z-index: 1;
+      transition: 0.25s;
       
       @mixin line {
         width: 25px;
@@ -89,6 +89,7 @@ nav {
         content: "";
         position: relative;
         display: block;
+        transition: 0.25s;
       }
       &:before {
         @include line;
@@ -125,13 +126,41 @@ nav {
     }
   }
 }
+main {
+  width: calc(100vw - 14vw);
+  height: 100vh;
+  padding-left: 7vw;
+  margin-top: 10px;
+  
+  & .header {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+    
+    & .dir {
+      & a {
+        color: black;
+        text-decoration: underline dotted;
+        
+        &:hover {
+          color: #d2691e;
+        }
+      }
+    }
+    & .time {
+      margin-left: auto;
+    }
+  }
+}
 .page-top {
   width: 50px;
   height: 50px;
   position: fixed;
   right: 25px;
   bottom: 25px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border: solid 2px black;
@@ -143,6 +172,8 @@ nav {
   
   &:before {
     content: "↑";
+    position: relative;
+    top: -1px;
     font-weight: bold;
     font-size: 18px;
     transition: 0.15s;
@@ -158,15 +189,19 @@ nav {
   }
 }
 
+body.scroll {
+  & nav {
+    & > a.top {
+      display: block;
+    }
+  }
+  & .page-top {
+    display: flex;
+  }
+}
+
 @media screen and (max-width: 750px) {
   nav {
-    &.menu-show {
-      position: fixed;
-      
-      & .top {
-        display: block !important;
-      }
-    }
     & > a:not(.top) {
       display: none;
     }
@@ -175,16 +210,48 @@ nav {
     }
     & .menu {
       display: flex;
+    }
+  }
+  main {
+    width: 100%;
+    padding-left: 0;
+    
+    & .header {
+      padding: 0 7vw;
+    }
+    & .wiki {
+      padding: 0 7vw;
+    }
+  }
+  body.menu-show {
+    header {
+      & .icon {
+        display: none;
+      }
+    }
+    nav {
+      position: fixed;
       
-      &.menu-show {
+      & .top {
+        display: block !important;
+      }
+      & .hamburger .icon {
+        background-color: transparent;
+        
+        &:before {
+          transform: translateY(9.5px) rotate(45deg);
+        }
+        &:after {
+          transform: translateY(-9.5px) rotate(-45deg);
+        }
+      }
+      & .menu {
         width: 100%;
         top: 44px;
         opacity: 1;
       }
     }
-  }
-  .page-top {
-    &.menu-show {
+    .page-top {
       display: none;
     }
   }
