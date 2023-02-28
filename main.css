@@ -58,6 +58,7 @@ nav {
   font-size: 17px;
   background-color: #f78599;
   padding-left: calc(7vw - 10px);
+  z-index: 999;
 }
 nav > a {
   color: white;
@@ -317,8 +318,5 @@ body.scroll .page-top {
     width: 100%;
     top: 44px;
     opacity: 1;
-  }
-  body.menu-show .page-top {
-    display: none;
   }
 }/*# sourceMappingURL=main.css.map */

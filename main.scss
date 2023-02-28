@@ -53,6 +53,7 @@ nav {
   font-size: 17px;
   background-color: #f78599;
   padding-left: calc(7vw - 10px);
+  z-index: 999;
   
   & > a {
     color: white;
@@ -341,9 +342,6 @@ body.scroll {
         top: 44px;
         opacity: 1;
       }
-    }
-    .page-top {
-      display: none;
     }
   }
 }
