@@ -171,8 +171,40 @@ main .header .dir a:hover {
   color: #d2691e;
 }
 main .header .time {
+  position: relative;
   margin-left: auto;
+}
+main .header .time .sum-time {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 10px;
+  outline: none;
   cursor: pointer;
+}
+main .header .time .sum-time:hover {
+  text-decoration: underline;
+  background-color: #dcdcdc;
+}
+main .header .time .detail {
+  width: 200px;
+  height: 110px;
+  position: absolute;
+  top: 27px;
+  right: 0px;
+  display: none;
+  padding: 8px 15px;
+  line-height: 22px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 0px grey;
+}
+main .header .time .detail.detail-show {
+  display: block;
+}
+main .header .time .detail :not(.title) {
+  margin-left: 10px;
 }
 
 footer {

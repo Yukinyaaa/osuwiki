@@ -22,4 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     });
   });
+  
+  $("main .header .sum-time").addEventListener("click", () => {
+    $("main .header .detail").classList.toggle("detail-show");
+  });
 });

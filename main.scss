@@ -169,8 +169,43 @@ main {
       }
     }
     & .time {
+      position: relative;
       margin-left: auto;
-      cursor: pointer;
+      
+      & .sum-time {
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 3px 10px;
+        outline: none;
+        cursor: pointer;
+        
+        &:hover {
+          text-decoration: underline;
+          background-color: #dcdcdc;
+        }
+      }
+      & .detail {
+        width: 200px;
+        height: 110px;
+        position: absolute;
+        top: 27px;
+        right: 0px;
+        display: none;
+        padding: 8px 15px;
+        line-height: 22px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 2px 2px 3px 0px grey;
+        
+        &.detail-show {
+          display: block;
+        }
+        & :not(.title) {
+          margin-left: 10px;
+        }
+      }
     }
   }
 }

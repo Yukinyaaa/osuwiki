@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return `<a href="/osuwiki${href}"${title ? ` title="${title}"` : ""}>${text ?? href}</a>`;
       }
     }
-    let start = Date.now();
+    let req_start = Date.now();
     fetch(`/osuwiki/${path}index.md`)
     .then(res => {
       console.log(res);
@@ -56,8 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
       else console.log(res.status);
     })
     .then(res => {
+      let req_end = Date.now();
       $("main .wiki").innerHTML = marked.marked(res, {renderer: renderer});
-      $("main .header .time").innerText = (Date.now() - start) + "ms";
+      let parse_end = Date.now();
+      $("main .header .sum-time").innerText = (parse_end - req_start) + "ms";
+      $("main .header .req-time").innerText = (req_end - req_start) + "ms";
+      $("main .header .parse-time").innerText = (parse_end - req_end) + "ms";
     });
   }
 });
