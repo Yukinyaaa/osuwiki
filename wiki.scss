@@ -1,0 +1,24 @@
+main {
+  & .wiki {
+    letter-spacing: 1px;
+    line-height: 32px;
+    
+    & > hr {
+      display: none;
+    }
+    & a {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid grey;
+      
+      &:hover {
+        color: #d2691e;
+        border-color: #d2691e;
+      }
+    }
+    & h1, & h2, &h3, & h4, & h5, & h6 {
+      border-bottom: 2px solid black;
+      padding: 7px;
+    }
+  }
+}

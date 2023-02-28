@@ -1,0 +1,20 @@
+main .wiki {
+  letter-spacing: 1px;
+  line-height: 32px;
+}
+main .wiki > hr {
+  display: none;
+}
+main .wiki a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid grey;
+}
+main .wiki a:hover {
+  color: #d2691e;
+  border-color: #d2691e;
+}
+main .wiki h1, main .wiki h2, main .wikih3, main .wiki h4, main .wiki h5, main .wiki h6 {
+  border-bottom: 2px solid black;
+  padding: 7px;
+}/*# sourceMappingURL=wiki.css.map */

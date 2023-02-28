@@ -133,7 +133,7 @@ nav .menu a {
 
 main {
   width: 86vw;
-  height: 100vh;
+  min-height: 100vh;
   padding-left: 7vw;
   margin-top: 10px;
 }
@@ -154,6 +154,19 @@ main .header .dir a:hover {
 }
 main .header .time {
   margin-left: auto;
+}
+
+footer {
+  border-top: 1px solid black;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+}
+footer a {
+  color: black;
+}
+footer a:hover {
+  text-decoration: underline;
 }
 
 .page-top {

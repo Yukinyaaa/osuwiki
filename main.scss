@@ -128,7 +128,7 @@ nav {
 }
 main {
   width: calc(100vw - 14vw);
-  height: 100vh;
+  min-height: 100vh;
   padding-left: 7vw;
   margin-top: 10px;
   
@@ -151,6 +151,20 @@ main {
     }
     & .time {
       margin-left: auto;
+    }
+  }
+}
+footer {
+  border-top: 1px solid black;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  
+  & a {
+    color: black;
+    
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
