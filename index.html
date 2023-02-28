@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>osu wiki</title>
   <link rel="stylesheet" href="/osuwiki/main.css">
   <script src="/osuwiki/main.js"></script>
@@ -12,10 +12,20 @@
     <div class="icon">osu wiki</div>
   </header>
   <nav>
+    <a href="/osuwiki/" class="top" hidden>osu wiki</a>
     <a href="/osuwiki/">トップページ</a>
     <a href="/osuwiki/recommend">おすすめ記事</a>
-    <a href="/osuwiki/ags">タグ一覧</a>
+    <a href="/osuwiki/tags">タグ一覧</a>
     <a href="/osuwiki/pages">全ページ一覧</a>
+    <div class="hamburger">
+      <div class="icon"></div>
+    </div>
+    <div class="menu">
+      <a href="/osuwiki/">トップページ</a>
+      <a href="/osuwiki/recommend">おすすめ記事</a>
+      <a href="/osuwiki/tags">タグ一覧</a>
+      <a href="/osuwiki/pages">全ページ一覧</a>
+    </div>
   </nav>
   <div style="height: 500vh;"></div>
   <div class="page-top" hidden></div>
