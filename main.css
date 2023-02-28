@@ -24,9 +24,27 @@ header {
      -moz-user-select: none;
           user-select: none;
 }
+header .dummy {
+  width: calc(7vw + 50px);
+  height: 70px;
+  position: absolute;
+  left: 0;
+  background-color: white;
+}
 header .icon {
+  width: 180px;
+  display: flex;
+  gap: 5px;
   font-size: 30px;
   color: black;
+}
+header .icon img {
+  z-index: 1;
+}
+header .icon span {
+  position: absolute;
+  left: calc(7vw - 95px);
+  z-index: -1;
 }
 
 nav {
@@ -154,6 +172,7 @@ main .header .dir a:hover {
 }
 main .header .time {
   margin-left: auto;
+  cursor: pointer;
 }
 
 footer {
@@ -203,6 +222,18 @@ footer a:hover {
   height: 55px;
   right: 22.5px;
   bottom: 22.5px;
+}
+
+@keyframes show-icon {
+  0% {
+    left: calc(7vw - 95px);
+  }
+  100% {
+    left: calc(7vw + 55px);
+  }
+}
+body.loaded header .icon span {
+  animation: 1s forwards show-icon;
 }
 
 body.scroll nav > a.top {

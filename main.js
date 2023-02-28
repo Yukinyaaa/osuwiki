@@ -2,6 +2,7 @@ function $(name) {
   return document.querySelector(name);
 }
 document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("loaded");
   document.addEventListener("scroll", () => {
     if(window.pageYOffset <= 70) {
       document.body.classList.remove("scroll");

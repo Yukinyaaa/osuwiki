@@ -18,9 +18,28 @@ header {
   padding-left: 7vw;
   user-select: none;
   
+  & .dummy {
+    width: calc(7vw + 50px);
+    height: 70px;
+    position: absolute;
+    left: 0;
+    background-color: white;
+  }
   & .icon {
+    width: calc(50px + 10px + 120px);
+    display: flex;
+    gap: 5px;
     font-size: 30px;
     color: black;
+    
+    & img {
+      z-index: 1;
+    }
+    & span {
+      position: absolute;
+      left: calc(7vw - 95px);
+      z-index: -1;
+    }
   }
 }
 nav {
@@ -151,6 +170,7 @@ main {
     }
     & .time {
       margin-left: auto;
+      cursor: pointer;
     }
   }
 }
@@ -203,6 +223,28 @@ footer {
   }
 }
 
+body.loaded {
+  @keyframes show-icon {
+    0% {
+      left: calc(7vw - 95px);
+    }
+    100% {
+      left: calc(7vw + 55px);
+    }
+    to {
+      
+    }
+  }
+  header {
+    
+    & .icon {
+      
+      & span {
+        animation: 1s forwards show-icon;
+      }
+    }
+  }
+}
 body.scroll {
   & nav {
     & > a.top {
