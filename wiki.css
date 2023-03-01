@@ -14,7 +14,7 @@ main .wiki a:hover {
   color: #d2691e;
   border-color: #d2691e;
 }
-main .wiki h1, main .wiki h2, main .wikih3, main .wiki h4, main .wiki h5, main .wiki h6 {
+main .wiki h1, main .wiki h2, main .wiki h3, main .wiki h4, main .wiki h5, main .wiki h6 {
   border-bottom: 2px solid black;
   padding: 7px;
 }/*# sourceMappingURL=wiki.css.map */

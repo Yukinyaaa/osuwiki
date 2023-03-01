@@ -201,6 +201,10 @@ main .header .time .detail {
   border-radius: 10px;
   box-shadow: 2px 2px 3px 0px grey;
 }
+main .header .time .detail > * {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 main .header .time .detail.detail-show {
   display: block;
 }

@@ -200,6 +200,9 @@ main {
         border-radius: 10px;
         box-shadow: 2px 2px 3px 0px grey;
         
+        & > * {
+          width: fit-content;
+        }
         &.detail-show {
           display: block;
         }
