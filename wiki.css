@@ -1,8 +1,58 @@
 main .wiki {
   letter-spacing: 1px;
   line-height: 32px;
+  min-height: calc(100svh - 30px - 10px - 45px - 70px);
 }
-main .wiki > hr {
+main .wiki > .loading {
+  height: calc(100svh - 30px - 10px - 45px - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+@keyframes loading-icon {
+  0% {
+    transform: none;
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: none;
+  }
+}
+main .wiki > .loading .icon1 {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  background-color: #f78599;
+  border-radius: 100%;
+  left: -15px;
+  animation: 1s 0s infinite loading-icon;
+}
+main .wiki > .loading .icon2 {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  background-color: #f78599;
+  border-radius: 100%;
+  animation: 1s 333ms infinite loading-icon;
+}
+main .wiki > .loading .icon3 {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  background-color: #f78599;
+  border-radius: 100%;
+  left: 15px;
+  animation: 1s 666ms infinite loading-icon;
+}
+main .wiki .line-start + hr {
   display: none;
 }
 main .wiki a {

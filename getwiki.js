@@ -58,6 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => {
       let req_end = Date.now();
       $("main .wiki").innerHTML = marked.marked(res, {renderer: renderer});
+      let line_start = document.createElement("div");
+      line_start.classList.add("line-start");
+      $("main .wiki").insertBefore(line_start, $("main .wiki").firstChild);
       let parse_end = Date.now();
       $("main .header .sum-time").innerText = (parse_end - req_start) + "ms";
       $("main .header .req-time").innerText = (req_end - req_start) + "ms";
