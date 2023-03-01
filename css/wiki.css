@@ -12,6 +12,9 @@ main .wiki .info404 {
   gap: 20px;
   opacity: 0;
 }
+main .wiki .info404 span {
+  font-size: min(4vw, 16px);
+}
 main .wiki .info404 div {
   display: flex;
   flex-direction: column;

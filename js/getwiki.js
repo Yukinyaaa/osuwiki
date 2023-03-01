@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return res.text();
       } else {
         $("main .wiki").classList.add("err404");
+        $("title").innerText = "ページが見つかりませんでした | osu wiki";
       }
     })
     .then(res => {
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(e => {
       console.log(e);
       $("main .wiki").classList.add("err404");
+      $("title").innerText = "ページが見つかりませんでした | osu wiki";
     });
   }
 });

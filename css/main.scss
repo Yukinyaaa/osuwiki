@@ -19,7 +19,7 @@ header {
   padding-left: 7vw;
   user-select: none;
   
-  & .dummy {
+  & .overlay {
     width: calc(7vw + 50px);
     height: 70px;
     position: absolute;
@@ -146,6 +146,12 @@ nav {
       padding: 10px;
     }
   }
+}
+.dummy-nav {
+  width: 100%;
+  height: 45px;
+  display: none;
+  background-color: white;
 }
 main {
   width: calc(100vw - 14vw);
@@ -318,8 +324,11 @@ body.scroll {
   body.menu-show {
     header {
       & .icon {
-        display: none;
+        opacity: 0;
       }
+    }
+    .dummy-nav {
+      display: block;
     }
     nav {
       position: fixed;
