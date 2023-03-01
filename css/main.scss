@@ -36,7 +36,7 @@ header {
     & img {
       z-index: 1;
     }
-    & span {
+    & > span {
       position: absolute;
       left: calc(7vw - 95px);
       z-index: -1;

@@ -1,4 +1,5 @@
 main .wiki {
+  position: relative;
   letter-spacing: 1px;
   line-height: 32px;
   min-height: calc(100svh - 30px - 10px - 45px - 70px);
@@ -102,6 +103,19 @@ main .wiki > .loading .icon3 {
   left: 15px;
   animation: 1s 666ms infinite loading-icon;
 }
+main .wiki .enable-js {
+  width: 100%;
+  height: calc(100svh - 30px - 10px - 45px - 70px);
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+main .wiki .enable-js span {
+  font-size: min(4vw, 16px);
+}
 main .wiki .line-start + hr {
   display: none;
 }
@@ -117,4 +131,13 @@ main .wiki a:hover {
 main .wiki h1, main .wiki h2, main .wiki h3, main .wiki h4, main .wiki h5, main .wiki h6 {
   border-bottom: 2px solid black;
   padding: 7px;
+}
+
+@media screen and (max-width: 750px) {
+  main .wiki {
+    padding: 0 7vw;
+  }
+  main .wiki .enable-js {
+    width: calc(100% - 14vw);
+  }
 }/*# sourceMappingURL=wiki.css.map */

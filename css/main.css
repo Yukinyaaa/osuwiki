@@ -41,7 +41,7 @@ header .icon {
 header .icon img {
   z-index: 1;
 }
-header .icon span {
+header .icon > span {
   position: absolute;
   left: calc(7vw - 95px);
   z-index: -1;
