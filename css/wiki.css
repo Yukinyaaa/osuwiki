@@ -123,6 +123,7 @@ main .wiki > .title {
   display: flex;
   flex-direction: column;
   padding: 7px;
+  margin-bottom: 15px;
   border-bottom: 5px solid #f78599;
 }
 main .wiki > .title span.date {
@@ -145,6 +146,7 @@ main .wiki a:hover {
 main .wiki h1, main .wiki h2, main .wiki h3, main .wiki h4, main .wiki h5, main .wiki h6 {
   border-bottom: 2px solid black;
   padding: 7px;
+  margin: 0;
 }
 
 @media screen and (max-width: 750px) {

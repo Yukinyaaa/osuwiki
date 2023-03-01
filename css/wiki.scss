@@ -124,6 +124,7 @@ main {
       display: flex;
       flex-direction: column;
       padding: 7px;
+      margin-bottom: 15px;
       border-bottom: 5px solid #f78599;
       
       &  span.date {
@@ -148,6 +149,7 @@ main {
     & h1, & h2, & h3, & h4, & h5, & h6 {
       border-bottom: 2px solid black;
       padding: 7px;
+      margin: 0;
     }
   }
 }
