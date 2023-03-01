@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 200);
   function main() {
     let path = location.pathname.match(/^\/osuwiki\/(.*)/)[1];
-    if(path === "" || path.match(/^osuwiki\/wiki\/.+/)) {
+    if(path === "" || path.match(/^wiki\/.+/)) {
       if(path === "") path = "wiki/top_page/";
       if(!path.match(/\/$/)) path += "/";
       let renderer = new marked.Renderer();
