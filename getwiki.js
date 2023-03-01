@@ -52,6 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(`/osuwiki/${path}index.md`)
     .then(res => {
       console.log(res);
+      console.log(res.cached);
+      try {
+        console.log(res.headers.get('cache-control'));
+      } catch(e) {
+        console.log(e);
+      }
       if(res.ok) return res.text();
       else console.log(res.status);
     })
