@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
               case "last_updated":
                 let last = new Date(key[1]);
                 console.dir(last);
-                date.innerText = `${last.getFullYear()}年${last.getMonth().toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
+                date.innerText = `${last.getFullYear()}年${(last.getMonth()+1).toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
                 break;
             }
           }
