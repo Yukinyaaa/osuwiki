@@ -2,11 +2,11 @@
 #info
 dir: /wiki/top_page/
 title: osu!の攻略サイト
-last_updated: 2023-02-28T22:43:00+09:00
+last_updated: 2023-03-02T01:10:00+09:00
 ---
 
 ## osu wikiへようこそ！
-このwikiは無料のリズムゲーム「osu!」の非公式wikiです。
+このwikiは無料のリズムアクションゲーム「osu!」の非公式wikiです。
 
 公式サイトは[こちら](https://osu.ppy.sh/)\
 公式wikiは[こちら](https://osu.ppy.sh/wiki/ja/Main_Page/)

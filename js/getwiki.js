@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if(!path.match(/\/$/)) path += "/";
       let renderer = new marked.Renderer();
       renderer.heading = function(text, level) {
-        if(text.split("\n")?.at(0) === "#info") {
+        if(text.split("\n")[0] === "#info") {
           let keys = text.split("\n").slice(1).map(value => {
             return value.split(": ");
           });
@@ -27,10 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 $("title").innerText = key[1] + " | osu wiki";
                 title.innerText = key[1];
                 break;
-              case "keywords":
-                break;
               case "last_updated":
                 let last = new Date(key[1]);
+                console.dir(last);
                 date.innerText = `${last.getFullYear()}年${last.getMonth().toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
                 break;
             }
