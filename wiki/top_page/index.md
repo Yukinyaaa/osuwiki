@@ -8,8 +8,8 @@ last_updated: 2023-02-28T22:43:00+09:00
 ## osu wikiへようこそ！
 このwikiは無料のリズムゲーム「osu!」の非公式wikiです。
 
-公式サイト: https://osu.ppy.sh/ \
-公式wiki: https://osu.ppy.sh/wiki/ja/Main_Page/
+公式サイトは[こちら](https://osu.ppy.sh/)\
+公式wikiは[こちら](https://osu.ppy.sh/wiki/ja/Main_Page/)
 
 ## もくじ
 - [osu!のはじめ方](/wiki/how_to/start_osu/)

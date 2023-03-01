@@ -168,7 +168,7 @@ main .header .dir a {
           text-decoration: underline dotted;
 }
 main .header .dir a:hover {
-  color: #d2691e;
+  color: #f78599;
 }
 main .header .time {
   position: relative;

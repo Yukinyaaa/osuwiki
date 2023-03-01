@@ -1,0 +1,120 @@
+$accent-color: #f78599;
+main {
+  & .wiki {
+    letter-spacing: 1px;
+    line-height: 32px;
+    min-height: calc(100svh - 30px - 10px - 45px - 70px);
+    
+    & .info404 {
+      height: calc(100svh - 30px - 10px - 45px - 70px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      opacity: 0;
+      
+      & div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        & a {
+          border-bottom: 1px dotted black;
+          position: relative;
+          
+          &:before {
+            content: "";
+            width: 0;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            display: block;
+            background-color: #f78599;
+            transition: 0.5s;
+            
+          }
+          &:hover:before {
+            width: 100%;
+          }
+        }
+      }
+    }
+    &.err404 {
+      @keyframes show404 {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      & .info404 {
+        display: flex;
+        animation: 0.25s forwards show404;
+      }
+      & > .loading {
+        display: none;
+      }
+    }
+    & > .loading {
+      height: calc(100svh - 30px - 10px - 45px - 70px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      
+      @keyframes loading-icon {
+        0% {
+          transform: none;
+        }
+        25% {
+          transform: translateY(-20px);
+        }
+        50% {
+          transform: none;
+        }
+      }
+      @mixin dot {
+        width: 15px;
+        height: 15px;
+        position: relative;
+        display: block;
+        background-color: $accent-color;
+        border-radius: 100%;
+      }
+      & .icon1 {
+        @include dot;
+        left: -15px;
+        animation: 1s 0s infinite loading-icon;
+      }
+      & .icon2 {
+        @include dot;
+        animation: 1s 333ms infinite loading-icon;
+      }
+      & .icon3 {
+        @include dot;
+        left: 15px;
+        animation: 1s 666ms infinite loading-icon;
+      }
+    }
+    & .line-start + hr {
+      display: none;
+    }
+    & a {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid black;
+      
+      &:hover {
+        color: $accent-color;
+        border-color: $accent-color;
+      }
+    }
+    & h1, & h2, & h3, & h4, & h5, & h6 {
+      border-bottom: 2px solid black;
+      padding: 7px;
+    }
+  }
+}

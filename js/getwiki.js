@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     renderer.link = function(href, title, text) {
-      console.log(href, title, text);
       if(!href.match(/^\//)) {
         return `<a href="${href}" target="_blank" rel="noopener"${title ? ` title="${title}"` : ""}>${text ?? href}</a>`;
       } else {
@@ -49,17 +48,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     let req_start = Date.now();
-    fetch(`/osuwiki/${path}index.md`)
+    fetch(`/osuwiki/${path}index.md`, {
+      method: "get",
+      headers: {
+        "Cache-Control": "no-cache",
+      }
+    })
     .then(res => {
       console.log(res);
-      console.log(res.cached);
-      try {
-        console.log(res.headers.get('cache-control'));
-      } catch(e) {
-        console.log(e);
+      if(res.ok) {
+        return res.text();
+      } else {
+        $("main .wiki").classList.add("err404");
       }
-      if(res.ok) return res.text();
-      else console.log(res.status);
     })
     .then(res => {
       let req_end = Date.now();
@@ -71,6 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
       $("main .header .sum-time").innerText = (parse_end - req_start) + "ms";
       $("main .header .req-time").innerText = (req_end - req_start) + "ms";
       $("main .header .parse-time").innerText = (parse_end - req_end) + "ms";
+    })
+    .catch(e => {
+      console.log(e);
+      $("main .wiki").classList.add("err404");
     });
   }
 });

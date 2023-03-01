@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+$accent-color: #f78599;
 * {
   box-sizing: border-box;
 }
@@ -51,7 +52,7 @@ nav {
   flex-direction: row;
   gap: 15px;
   font-size: 17px;
-  background-color: #f78599;
+  background-color: $accent-color;
   padding-left: calc(7vw - 10px);
   z-index: 999;
   
@@ -131,7 +132,7 @@ nav {
     flex-direction: column;
     gap: 20px;
     opacity: 0;
-    background-color: #f78599;
+    background-color: $accent-color;
     transition: 0.5s;
     white-space: nowrap;
     border-top: 1px solid white;
@@ -164,7 +165,7 @@ main {
         text-decoration: underline dotted;
         
         &:hover {
-          color: #d2691e;
+          color: $accent-color;
         }
       }
     }
@@ -268,9 +269,6 @@ body.loaded {
     }
     100% {
       left: calc(7vw + 55px);
-    }
-    to {
-      
     }
   }
   header {

@@ -3,6 +3,53 @@ main .wiki {
   line-height: 32px;
   min-height: calc(100svh - 30px - 10px - 45px - 70px);
 }
+main .wiki .info404 {
+  height: calc(100svh - 30px - 10px - 45px - 70px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+}
+main .wiki .info404 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .wiki .info404 div a {
+  border-bottom: 1px dotted black;
+  position: relative;
+}
+main .wiki .info404 div a:before {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  display: block;
+  background-color: #f78599;
+  transition: 0.5s;
+}
+main .wiki .info404 div a:hover:before {
+  width: 100%;
+}
+@keyframes show404 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main .wiki.err404 .info404 {
+  display: flex;
+  animation: 0.25s forwards show404;
+}
+main .wiki.err404 > .loading {
+  display: none;
+}
 main .wiki > .loading {
   height: calc(100svh - 30px - 10px - 45px - 70px);
   display: flex;
@@ -58,11 +105,11 @@ main .wiki .line-start + hr {
 main .wiki a {
   color: black;
   text-decoration: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid black;
 }
 main .wiki a:hover {
-  color: #d2691e;
-  border-color: #d2691e;
+  color: #f78599;
+  border-color: #f78599;
 }
 main .wiki h1, main .wiki h2, main .wiki h3, main .wiki h4, main .wiki h5, main .wiki h6 {
   border-bottom: 2px solid black;
