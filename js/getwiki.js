@@ -19,23 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
         let keys = text.split("\n").slice(1).map(value => {
           return value.split(": ");
         });
+        let div = document.createElement("div");
+        div.classList.add("title");
+        let title = document.createElement("span");
+        let date = document.createElement("span");
+        date.classList.add("date");
         for(let key of keys) {
           switch(key[0]) {
             case "title":
               $("title").innerText = key[1] + " | osu wiki";
-              break;
-            case "description":
-              $("meta[name=description]").setAttribute("content", key[1]);
+              title.innerText = key[1];
               break;
             case "keywords":
-              $("meta[name=keywords]").setAttribute("content", key[1]);
               break;
             case "last_updated":
-              
+              let last = new Date(key[1]);
+              date.innerText = `${last.getFullYear()}年${last.getMonth().toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
               break;
           }
         }
-        return "";
+        div.append(date, title);
+        return div.outerHTML;
       } else {
         return `<h${level}>${text}</h${level}>`;
       }

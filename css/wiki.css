@@ -119,6 +119,20 @@ main .wiki .enable-js span {
 main .wiki .line-start + hr {
   display: none;
 }
+main .wiki > .title {
+  display: flex;
+  flex-direction: column;
+  padding: 7px;
+  border-bottom: 5px solid #f78599;
+}
+main .wiki > .title span.date {
+  font-size: 15px;
+  color: grey;
+}
+main .wiki > .title span:not(.date) {
+  font-weight: bold;
+  font-size: 25px;
+}
 main .wiki a {
   color: black;
   text-decoration: none;
