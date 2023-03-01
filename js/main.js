@@ -1,10 +1,11 @@
 function $(name) {
-  return document.querySelector(name);
+  let nodes = document.querySelectorAll(name);
+  return nodes.length == 1 ? nodes[0] : nodes;
 }
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
   document.addEventListener("scroll", () => {
-    if(window.pageYOffset <= 70) {
+    if(window.scrollY <= 70) {
       document.body.classList.remove("scroll");
     } else {
       document.body.classList.add("scroll");

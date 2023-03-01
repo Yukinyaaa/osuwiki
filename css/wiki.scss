@@ -123,8 +123,8 @@ main {
     & > .title {
       display: flex;
       flex-direction: column;
-      padding: 7px;
-      margin-bottom: 15px;
+      padding: 7px 7px 10px 7px;
+      margin: 15px 0;
       border-bottom: 5px solid #f78599;
       
       &  span.date {
@@ -150,6 +150,27 @@ main {
       border-bottom: 2px solid black;
       padding: 7px;
       margin: 0;
+    }
+    & strong {
+      position: relative;
+      
+      &.highlighted {
+        
+        &:before {
+          width: 100%;
+        }
+      }
+      &:before {
+        content: "";
+        width: 0;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        display: block;
+        background-color: #ffb800;
+        transition: 1.5s ease;
+      }
     }
   }
 }

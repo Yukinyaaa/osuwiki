@@ -16,6 +16,7 @@ last_updated: 2023-03-02T01:10:00+09:00
 - [osu!のルール](/wiki/rules/)
 - [譜面の入れ方](/wiki/how_to/import_beatmap/)
 - [プレイ方法](/wiki/how_to/play_gamemodes/)
+- [osu!を配信する方法](/wiki/how_to/stream_osu/)
 - [osu!の用語一覧](/wiki/terms/)
 - [全メダル取得方法](/wiki/how_to/get_medals/)
 - [osu!のチーム一覧](/wiki/teams/)

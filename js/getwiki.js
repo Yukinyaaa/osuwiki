@@ -7,8 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 200);
   function main() {
     let path = location.pathname.match(/^\/osuwiki\/(.*)/)[1];
-    if(path === "" || path.match(/^wiki\/.+/)) {
+    let dir = path.match(/^(wiki\/|debug\/).*/);
+    if(path === "" || dir) {
       if(path === "") path = "wiki/top_page/";
+      if(dir?.at(1) == "debug/") {
+        path = "wiki/" + location.search.slice(2);
+      }
       if(!path.match(/\/$/)) path += "/";
       let renderer = new marked.Renderer();
       renderer.heading = function(text, level) {
@@ -29,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
               case "last_updated":
                 let last = new Date(key[1]);
-                console.dir(last);
                 date.innerText = `${last.getFullYear()}年${(last.getMonth()+1).toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
                 break;
             }
@@ -46,6 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           return `<a href="/osuwiki${href}"${title ? ` title="${title}"` : ""}>${text ?? href}</a>`;
         }
+      }
+      renderer.image = function(href, title, text) {
+        return `<img src="/osuwiki/${path}${href}"${title ? ` title="${title}"` : ""}${text ? ` alt="${text}"` : ""}>`;
       }
       let req_start = Date.now();
       fetch(`/osuwiki/${path}index.md`, {
@@ -73,6 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
         $("main .header .sum-time").innerText = (parse_end - req_start) + "ms";
         $("main .header .req-time").innerText = (req_end - req_start) + "ms";
         $("main .header .parse-time").innerText = (parse_end - req_end) + "ms";
+        let strong = $("main .wiki strong");
+        document.addEventListener("scroll", () => {
+          console.clear();
+          for(let i = 0; i < strong.length; i++) {
+            let pos = strong[i].getBoundingClientRect().top + window.scrollY;
+            if(window.scrollY > pos - window.innerHeight) {
+              strong[i].classList.add("highlighted");
+            }
+          }
+        });
+        document.dispatchEvent(new Event("scroll"));
       })
       .catch(e => {
         console.log(e);
