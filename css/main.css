@@ -54,13 +54,15 @@ nav {
   top: -1px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 15px;
   font-size: 17px;
   background-color: #f78599;
-  padding-left: calc(7vw - 10px);
+  padding: 0 calc(7vw - 10px);
   z-index: 999;
 }
 nav > a {
+  height: 100%;
   color: white;
   position: relative;
   display: flex;
@@ -85,6 +87,32 @@ nav > a:not(.top):before {
 }
 nav > a:not(.top):hover:before {
   width: 100%;
+}
+nav .dark-switcher {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  margin-left: auto;
+}
+nav .dark-switcher .icon {
+  height: 17px;
+  width: 17px;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="70 -245 400 446"><path fill="%231e2836" d="M191 381q-30 -28 -46 -67v0q-17 -38 -17 -82q2 -84 55 -141q53 -58 135 -66q-43 -24 -94 -25q-82 2 -136 56t-56 136q1 73 46 124q44 52 113 65v0zM257 403q-3 11 -15 12q-9 1 -19 1q-62 -1 -112 -31q-51 -29 -81 -80q-29 -50 -30 -113q1 -63 31 -113q29 -51 80 -80 q50 -30 113 -31q93 2 155 63q8 9 3 19t-17 9q-14 -3 -30 -3q-74 2 -124 52q-49 49 -51 124q0 50 24 90q25 40 65 63q10 6 8 18v0z" transform="rotate(-45)"/></svg>');
+}
+nav .dark-switcher:hover {
+  background-color: #1e2836;
+  box-shadow: 0px 0px 10px 2px white;
+}
+nav .dark-switcher:hover .icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="70 -245 400 446"><path fill="white" d="M191 381q-30 -28 -46 -67v0q-17 -38 -17 -82q2 -84 55 -141q53 -58 135 -66q-43 -24 -94 -25q-82 2 -136 56t-56 136q1 73 46 124q44 52 113 65v0zM257 403q-3 11 -15 12q-9 1 -19 1q-62 -1 -112 -31q-51 -29 -81 -80q-29 -50 -30 -113q1 -63 31 -113q29 -51 80 -80 q50 -30 113 -31q93 2 155 63q8 9 3 19t-17 9q-14 -3 -30 -3q-74 2 -124 52q-49 49 -51 124q0 50 24 90q25 40 65 63q10 6 8 18v0z" transform="rotate(-45)"/></svg>');
 }
 nav .hamburger {
   width: 45px;
@@ -158,8 +186,7 @@ nav .menu a {
 }
 
 main {
-  width: 86vw;
-  padding-left: 7vw;
+  padding: 0 7vw;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -249,7 +276,7 @@ footer a:hover {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  transition: 0.15s;
+  transition: width 0.15s, height 0.15s, right 0.15s, bottom 0.15s;
 }
 .page-top:before {
   content: "↑";

@@ -111,7 +111,6 @@ main .wiki .enable-js {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
 }
 main .wiki .enable-js span {
   font-size: min(4vw, 16px);
@@ -149,7 +148,7 @@ main .wiki h1, main .wiki h2, main .wiki h3, main .wiki h4, main .wiki h5, main 
   margin: 0;
 }
 main .wiki strong {
-  background-image: linear-gradient(to right, transparent 50%, rgba(255, 184, 0, 0.5647058824) 50%);
+  background-image: linear-gradient(to right, transparent 50%, rgba(255, 183, 0, 0.6823529412) 50%);
   background-repeat: repeat-x;
   background-size: 200% 2em;
   background-position: 0 20px;

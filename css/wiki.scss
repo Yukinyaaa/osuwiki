@@ -111,7 +111,6 @@ main {
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: white;
       
       & span {
         font-size: min(4vw, 16px);
@@ -152,7 +151,7 @@ main {
       margin: 0;
     }
     & strong {
-      background-image: linear-gradient(to right, transparent 50%, #ffb80090 50%);
+      background-image: linear-gradient(to right, transparent 50%, #ffb700ae 50%);
       background-repeat: repeat-x;
       background-size: 200% 2em;
       background-position: 0 20px;

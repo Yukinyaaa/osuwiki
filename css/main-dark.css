@@ -1,3 +1,67 @@
 body.dark {
-  background-color: rgb(30, 40, 54);
+  background-color: #1e2836;
+}
+body.dark header .overlay {
+  background-color: #1e2836;
+}
+body.dark header .icon span {
+  color: white;
+}
+body.dark nav .dark-switcher {
+  background-color: #1e2836;
+  box-shadow: 0px 0px 10px 2px white;
+}
+body.dark nav .dark-switcher .icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -64 512 512"><path fill="white" d="M371 435q-2 8 -9 12q-8 3 -16 -2l-90 -62l-90 62q-8 5 -15 2q-8 -4 -10 -12l-20 -108l-108 -20q-8 -2 -12 -9q-3 -8 2 -16l62 -90l-62 -90q-5 -8 -2 -16q4 -7 12 -9l108 -20l20 -108q2 -8 9 -12q8 -3 16 2l90 62l90 -62q8 -5 16 -2q7 4 9 12l20 108l108 20q8 2 12 9 q3 8 -2 16l-62 90l62 90q5 8 2 15q-4 8 -12 10l-108 20l-20 108v0zM265 350l79 55l18 -95q2 -10 12 -13l95 -17l-55 -79q-5 -9 0 -18l55 -79l-95 -18q-10 -2 -12 -13l-18 -94l-79 54q-9 6 -18 0l-79 -54l-18 94q-2 11 -12 13l-95 18l55 79q5 9 0 18l-55 79l95 18q10 2 13 12 l17 95l79 -55q9 -5 18 0v0zM256 64q35 0 64 17v0q29 17 47 47q17 30 17 64t-17 64q-18 30 -47 47t-64 17t-64 -17t-47 -47q-17 -30 -17 -64t17 -64q18 -30 47 -47t64 -17v0zM160 192q0 26 13 48v0q13 22 35 35q23 13 48 13t48 -13q22 -13 35 -35t13 -48t-13 -48t-35 -35 q-23 -13 -48 -13t-48 13q-22 13 -35 35t-13 48v0z"/></svg>');
+}
+body.dark nav .dark-switcher:hover {
+  background-color: white;
+  box-shadow: none;
+}
+body.dark nav .dark-switcher:hover .icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -64 512 512"><path fill="%231e2836" d="M371 435q-2 8 -9 12q-8 3 -16 -2l-90 -62l-90 62q-8 5 -15 2q-8 -4 -10 -12l-20 -108l-108 -20q-8 -2 -12 -9q-3 -8 2 -16l62 -90l-62 -90q-5 -8 -2 -16q4 -7 12 -9l108 -20l20 -108q2 -8 9 -12q8 -3 16 2l90 62l90 -62q8 -5 16 -2q7 4 9 12l20 108l108 20q8 2 12 9 q3 8 -2 16l-62 90l62 90q5 8 2 15q-4 8 -12 10l-108 20l-20 108v0zM265 350l79 55l18 -95q2 -10 12 -13l95 -17l-55 -79q-5 -9 0 -18l55 -79l-95 -18q-10 -2 -12 -13l-18 -94l-79 54q-9 6 -18 0l-79 -54l-18 94q-2 11 -12 13l-95 18l55 79q5 9 0 18l-55 79l95 18q10 2 13 12 l17 95l79 -55q9 -5 18 0v0zM256 64q35 0 64 17v0q29 17 47 47q17 30 17 64t-17 64q-18 30 -47 47t-64 17t-64 -17t-47 -47q-17 -30 -17 -64t17 -64q18 -30 47 -47t64 -17v0zM160 192q0 26 13 48v0q13 22 35 35q23 13 48 13t48 -13q22 -13 35 -35t13 -48t-13 -48t-35 -35 q-23 -13 -48 -13t-48 13q-22 13 -35 35t-13 48v0z"/></svg>');
+}
+body.dark main .header {
+  border-bottom-color: white;
+}
+body.dark main .header .dir a:not(:hover) {
+  color: white;
+}
+body.dark main .header .time .detail {
+  background-color: #1e2836;
+  color: white;
+  border-color: white;
+}
+body.dark main .header .time .sum-time {
+  color: white;
+  background-color: #1e2836;
+}
+body.dark main .header .time .sum-time:hover {
+  background-color: #66707d;
+}
+body.dark main .wiki .info404 a {
+  border-bottom-color: white;
+}
+body.dark main .wiki *:not(.date):not(a) {
+  color: white;
+}
+body.dark main .wiki a:not(:hover) {
+  color: white;
+  border-bottom-color: white;
+}
+body.dark main .wiki h1, body.dark main .wiki h2, body.dark main .wiki h3, body.dark main .wiki h4, body.dark main .wiki h5, body.dark main .wiki h6 {
+  border-bottom-color: white;
+}
+body.dark .page-top {
+  box-shadow: 0px 0px 10px 2px white;
+  background-color: #1e2836;
+  border-color: white;
+  color: white;
+}
+body.dark footer {
+  border-top-color: white;
+  color: white;
+}
+body.dark footer a {
+  color: white;
 }/*# sourceMappingURL=main-dark.css.map */
