@@ -152,24 +152,27 @@ main {
       margin: 0;
     }
     & strong {
-      position: relative;
+      background-image: linear-gradient(to right, transparent 50%, #ffb80090 50%);
+      background-repeat: repeat-x;
+      background-size: 200% 2em;
+      background-position: 0 20px;
       
       &.highlighted {
-        
-        &:before {
-          width: 100%;
-        }
+        background-position: -100% 20px;
+        transition: background-position-x 1.5s ease;
       }
+    }
+    & img {
+      max-width: 100%;
+      position: relative;
+      
       &:before {
         content: "";
-        width: 0;
-        height: 3px;
         position: absolute;
         left: 0;
-        bottom: -1px;
-        display: block;
-        background-color: #ffb800;
-        transition: 1.5s ease;
+        top: 0;
+        width: 100%;
+        height: 100%;
       }
     }
   }

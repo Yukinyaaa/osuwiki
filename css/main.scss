@@ -139,7 +139,7 @@ nav {
     padding-top: 30px;
     
     & > * {
-      margin-left: calc(7vw - 10px);
+      margin: 0 calc(7vw - 10px);
     }
     & a {
       color: white;

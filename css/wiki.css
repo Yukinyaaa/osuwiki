@@ -149,21 +149,26 @@ main .wiki h1, main .wiki h2, main .wiki h3, main .wiki h4, main .wiki h5, main 
   margin: 0;
 }
 main .wiki strong {
+  background-image: linear-gradient(to right, transparent 50%, rgba(255, 184, 0, 0.5647058824) 50%);
+  background-repeat: repeat-x;
+  background-size: 200% 2em;
+  background-position: 0 20px;
+}
+main .wiki strong.highlighted {
+  background-position: -100% 20px;
+  transition: background-position-x 1.5s ease;
+}
+main .wiki img {
+  max-width: 100%;
   position: relative;
 }
-main .wiki strong.highlighted:before {
-  width: 100%;
-}
-main .wiki strong:before {
+main .wiki img:before {
   content: "";
-  width: 0;
-  height: 3px;
   position: absolute;
   left: 0;
-  bottom: -1px;
-  display: block;
-  background-color: #ffb800;
-  transition: 1.5s ease;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 750px) {
