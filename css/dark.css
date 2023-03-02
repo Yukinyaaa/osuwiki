@@ -52,6 +52,13 @@ body.dark main .wiki a:not(:hover) {
 body.dark main .wiki h1, body.dark main .wiki h2, body.dark main .wiki h3, body.dark main .wiki h4, body.dark main .wiki h5, body.dark main .wiki h6 {
   border-bottom-color: white;
 }
+body.dark main .wiki code {
+  background-color: grey;
+}
+body.dark main .wiki input {
+  background-color: #66707d;
+  border: 1px solid white;
+}
 body.dark .page-top {
   box-shadow: 0px 0px 10px 2px white;
   background-color: #1e2836;
@@ -64,4 +71,4 @@ body.dark footer {
 }
 body.dark footer a {
   color: white;
-}/*# sourceMappingURL=main-dark.css.map */
+}/*# sourceMappingURL=dark.css.map */

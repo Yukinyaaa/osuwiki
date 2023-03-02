@@ -169,6 +169,46 @@ main .wiki img:before {
   width: 100%;
   height: 100%;
 }
+main .wiki code {
+  background-color: #d1d1d1;
+  border-radius: 5px;
+  padding: 1px 7px;
+  margin: 0 5px;
+  font-family: "Noto Serif JP";
+  font-size: 15px;
+}
+main .wiki input {
+  position: relative;
+}
+main .wiki input[type=text], main .wiki input[type=number] {
+  top: -2px;
+}
+main .wiki input[type=radio]:after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+main .wiki input[type=radio]:checked:after {
+  border-color: blue !important;
+}
+main .wiki input[type=radio]:checked:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  top: 0;
+  left: 0;
+  width: 11px;
+  height: 11.5px;
+  background-color: blue;
+  border-radius: 50%;
+  z-index: 1;
+}
 
 @media screen and (max-width: 750px) {
   main .wiki {

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   $("nav .dark-switcher").addEventListener("click", () => {
-    if(localStorage.getItem("darkmode") != "false") {
+    if(localStorage.getItem("darkmode") == "true") {
       document.body.classList.remove("dark");
       localStorage.setItem("darkmode", "false");
     } else {

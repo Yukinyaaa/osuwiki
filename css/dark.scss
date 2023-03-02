@@ -80,6 +80,13 @@ body.dark {
       & h1, & h2, & h3, & h4, & h5, & h6 {
         border-bottom-color: white;
       }
+      & code {
+        background-color: grey;
+      }
+      & input {
+        background-color: #66707d;
+        border: 1px solid white;
+      }
     }
   }
   & .page-top {
