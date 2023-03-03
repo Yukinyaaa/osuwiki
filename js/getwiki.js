@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 $("title").innerText = key[1] + " | osu wiki";
                 title.innerText = key[1];
                 break;
-              case "last_updated":
+              case "updated":
                 let last = new Date(key[1]);
                 date.innerText = `${last.getFullYear()}年${(last.getMonth()+1).toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
                 break;

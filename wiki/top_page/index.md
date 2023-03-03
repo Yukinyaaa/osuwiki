@@ -2,7 +2,8 @@
 #info
 dir: /wiki/top_page/
 title: osu!の攻略サイト
-last_updated: 2023-03-02T01:10:00+09:00
+submitted: 2023-03-01T23:20:00+09:00
+updated: 2023-03-02T01:10:00+09:00
 ---
 
 ## osu wikiへようこそ！
