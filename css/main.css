@@ -245,6 +245,120 @@ main .header .time .detail.detail-show {
 main .header .time .detail :not(.title) {
   margin-left: 10px;
 }
+main .overlay .info404 {
+  height: calc(100svh - 30px - 10px - 45px - 70px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+}
+main .overlay .info404 span {
+  font-size: min(4vw, 16px);
+}
+main .overlay .info404 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .overlay .info404 div a {
+  border-bottom: 1px dotted black;
+  position: relative;
+}
+main .overlay .info404 div a:before {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  display: block;
+  background-color: #f78599;
+  transition: 0.5s;
+}
+main .overlay .info404 div a:hover:before {
+  width: 100%;
+}
+@keyframes show404 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main .overlay.err404 .info404 {
+  display: flex;
+  animation: 0.25s forwards show404;
+}
+main .overlay.err404 > .loading {
+  display: none;
+}
+main .overlay > .loading {
+  height: calc(100svh - 30px - 10px - 45px - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+@keyframes loading-icon {
+  0% {
+    transform: none;
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: none;
+  }
+}
+main .overlay > .loading .icon1 {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  background-color: #f78599;
+  border-radius: 100%;
+  left: -15px;
+  animation: 1s 0s infinite loading-icon;
+}
+main .overlay > .loading .icon2 {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  background-color: #f78599;
+  border-radius: 100%;
+  animation: 1s 333ms infinite loading-icon;
+}
+main .overlay > .loading .icon3 {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  background-color: #f78599;
+  border-radius: 100%;
+  left: 15px;
+  animation: 1s 666ms infinite loading-icon;
+}
+main .overlay .enable-js {
+  width: 100%;
+  height: calc(100svh - 30px - 10px - 45px - 70px);
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .overlay .enable-js span {
+  font-size: min(4vw, 16px);
+}
+main .overlay.wiki-loaded .info404, main .overlay.wiki-loaded > .loading, main .overlay.wiki-loaded .enable-js {
+  display: none;
+}
 
 footer {
   border-top: 1px solid black;
@@ -331,8 +445,11 @@ body.scroll .page-top {
   main .header {
     padding: 0 7vw;
   }
-  main .wiki {
+  main .overlay {
     padding: 0 7vw;
+  }
+  main .overlay .enable-js {
+    width: calc(100% - 14vw);
   }
   body.menu-show header .icon {
     opacity: 0;

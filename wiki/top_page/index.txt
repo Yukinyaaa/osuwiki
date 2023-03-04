@@ -1,0 +1,28 @@
+<!--info
+dir: /wiki/top_page/
+title: osu!の攻略サイト
+submitted: 2023-03-01T23:20:00+09:00
+updated: 2023-03-02T01:10:00+09:00
+-->
+
+<h2>osu wikiへようこそ！</h2>
+<p>
+  このwikiは無料のリズムアクションゲーム「osu!」の非公式wikiです。
+</p>
+<p>
+  公式サイトは<a href="https://osu.ppy.sh/">こちら</a><br>
+  公式wikiは<a href="https://osu.ppy.sh/wiki/ja/Main_Page/">こちら</a>
+</p>
+
+<h2>もくじ</h2>
+<ul>
+  <li><a href="/wiki/how_to/start_osu/">osu!のはじめ方</a></li>
+  <li><a href="/wiki/rules/">osu!のルール</a></li>
+  <li><a href="/wiki/how_to/import_beatmap/">譜面の入れ方</a></li>
+  <li><a href="/wiki/how_to/play_gamemodes/">プレイ方法</a></li>
+  <li><a href="/wiki/how_to/stream_osu/">osu!を配信する方法</a></li>
+  <li><a href="/wiki/glossary/">osu!の用語一覧</a></li>
+  <li><a href="/wiki/how_to/get_medals/">全メダル取得方法</a></li>
+  <li><a href="/wiki/teams/">osu!のチーム一覧</a></li>
+  <li><a href="/wiki/system_files/">システムファイル一覧</a></li>
+</ul>

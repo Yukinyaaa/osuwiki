@@ -17,68 +17,82 @@ document.addEventListener("DOMContentLoaded", () => {
       if(path[0] == "debug") {
         path = [...decodeURIComponent(location.hash.slice(1)).match(/^\/?(.*)\/?$/)[1].split("/")];
       }
-      // $("main .header .dir");
-      let renderer = new marked.Renderer();
-      renderer.heading = function(text, level) {
-        if(text.split("\n")[0] === "#info") {
-          let keys = text.split("\n").slice(1).map(value => {
-            return value.split(": ");
-          });
-          let div = document.createElement("div");
-          div.classList.add("title");
-          let title = document.createElement("span");
-          let date = document.createElement("span");
-          date.classList.add("date");
-          for(let key of keys) {
-            switch(key[0]) {
-              case "title":
-                $("title").innerText = key[1] + " | osu wiki";
-                title.innerText = key[1];
-                break;
-              case "updated":
-                let last = new Date(key[1]);
-                date.innerText = `${last.getFullYear()}年${(last.getMonth()+1).toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
-                break;
-            }
-          }
-          div.append(date, title);
-          return div.outerHTML;
-        } else {
-          return `<h${level}>${text}</h${level}>`;
-        }
-      }
-      renderer.link = function(href, title, text) {
-        if(!href.match(/^\//)) {
-          return `<a href="${href}" target="_blank" rel="noopener"${title ? ` title="${title}"` : ""}>${text ?? href}</a>`;
-        } else {
-          return `<a href="/osuwiki${debug ? "/debug#" + encodeURIComponent(href) : href}"${title ? ` title="${title}"` : ""}>${text ?? href}</a>`;
-        }
-      }
-      renderer.image = function(href, title, text) {
-        return `<img src="/osuwiki/${path.join("/")}${href}"${title ? ` title="${title}"` : ""}${text ? ` alt="${text}"` : ""}>`;
-      }
+      // // $("main .header .dir");
+      // let renderer = new marked.Renderer();
+      // renderer.heading = function(text, level) {
+      //   if(text.split("\n")[0] === "#info") {
+      //     let keys = text.split("\n").slice(1).map(value => {
+      //       return value.split(": ");
+      //     });
+      //     let div = document.createElement("div");
+      //     div.classList.add("title");
+      //     let title = document.createElement("span");
+      //     let date = document.createElement("span");
+      //     date.classList.add("date");
+      //     for(let key of keys) {
+      //       switch(key[0]) {
+      //         case "title":
+      //           $("title").innerText = key[1] + " | osu wiki";
+      //           title.innerText = key[1];
+      //           break;
+      //         case "updated":
+      //           let last = new Date(key[1]);
+      //           date.innerText = `${last.getFullYear()}年${(last.getMonth()+1).toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
+      //           break;
+      //       }
+      //     }
+      //     div.append(date, title);
+      //     return div.outerHTML;
+      //   } else {
+      //     return `<h${level}>${text}</h${level}>`;
+      //   }
+      // }
+      // renderer.link = function(href, title, text) {
+      //   if(!href.match(/^\//)) {
+      //     return `<a href="${href}" target="_blank" rel="noopener"${title ? ` title="${title}"` : ""}>${text ?? href}</a>`;
+      //   } else {
+      //     return `<a href="/osuwiki${debug ? "/debug#" + encodeURIComponent(href) : href}"${title ? ` title="${title}"` : ""}>${text ?? href}</a>`;
+      //   }
+      // }
+      // renderer.image = function(href, title, text) {
+      //   return `<img src="/osuwiki/${path.join("/")}${href}"${title ? ` title="${title}"` : ""}${text ? ` alt="${text}"` : ""}>`;
+      // }
       let req_start = Date.now();
-      fetch(`/osuwiki/${path.join("/")}/index.md`, {
+      fetch(`/osuwiki/${path.join("/")}/index.txt`, {
         method: "get",
-        headers: {
-          "Cache-Control": "no-cache",
-        }
+        headers: { "Cache-Control": "no-cache" }
       })
       .then(res => {
         console.log(res);
         if(res.ok) {
           return res.text();
         } else {
-          $("main .wiki").classList.add("err404");
+          $("main .overlay").classList.add("err404");
           $("title").innerText = "ページが見つかりませんでした | osu wiki";
         }
       })
       .then(res => {
         let req_end = Date.now();
-        $("main .wiki").innerHTML = marked.marked(res, {renderer: renderer});
-        let line_start = document.createElement("div");
-        line_start.classList.add("line-start");
-        $("main .wiki").insertBefore(line_start, $("main .wiki").firstChild);
+        let info = res.match(/<!--info\n([\s\S]+?)\n-->/)?.at(1);
+        if(info) {
+          let keys = info.split("\n").map(value => {
+            return value.split(": ");
+          });
+          for(let key of keys) {
+            switch(key[0]) {
+              case "title":
+                $("title").innerText = key[1] + " | osu wiki";
+                $("main .overlay .wiki-title .title").innerText = key[1];
+                break;
+              case "updated":
+                let last = new Date(key[1]);
+                $("main .overlay .wiki-title .date").innerText = `${last.getFullYear()}年${(last.getMonth()+1).toString().padStart(2, "0")}月${last.getDate().toString().padStart(2, "0")}日`;
+                break;
+            }
+          }
+        }
+        $("main .overlay .wiki").innerHTML = res;
+        $("main .overlay").classList.add("wiki-loaded");
         let parse_end = Date.now();
         $("main .header .sum-time").innerText = (parse_end - req_start) + "ms";
         $("main .header .req-time").innerText = (req_end - req_start) + "ms";
@@ -96,11 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(e => {
         console.log(e);
-        $("main .wiki").classList.add("err404");
+        $("main .overlay").classList.add("err404");
         $("title").innerText = "ページが見つかりませんでした | osu wiki";
       });
     } else {
-      $("main .wiki").classList.add("err404");
+      $("main .overlay").classList.add("err404");
       $("title").innerText = "ページが見つかりませんでした | osu wiki";
     }
   }

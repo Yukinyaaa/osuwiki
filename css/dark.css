@@ -39,23 +39,23 @@ body.dark main .header .time .sum-time {
 body.dark main .header .time .sum-time:hover {
   background-color: #66707d;
 }
-body.dark main .wiki .info404 a {
+body.dark main .overlay .info404 a {
   border-bottom-color: white;
 }
-body.dark main .wiki *:not(.date):not(a) {
+body.dark main .overlay *:not(.date):not(a) {
   color: white;
 }
-body.dark main .wiki a:not(:hover) {
+body.dark main .overlay a:not(:hover) {
   color: white;
   border-bottom-color: white;
 }
-body.dark main .wiki h1, body.dark main .wiki h2, body.dark main .wiki h3, body.dark main .wiki h4, body.dark main .wiki h5, body.dark main .wiki h6 {
+body.dark main .overlay h1, body.dark main .overlay h2, body.dark main .overlay h3, body.dark main .overlay h4, body.dark main .overlay h5, body.dark main .overlay h6 {
   border-bottom-color: white;
 }
-body.dark main .wiki code {
+body.dark main .overlay code {
   background-color: grey;
 }
-body.dark main .wiki input {
+body.dark main .overlay input {
   background-color: #66707d;
   border: 1px solid white;
 }
