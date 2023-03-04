@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(path[0] == "" || path[0] == "wiki" || path[0] == "debug") {
       if(path[0] == "") path = ["wiki", "top_page"];
       if(path[0] == "debug") {
-        path = [...decodeURIComponent(location.hash.slice(1)).match(/^\/?(.*)\/?$/)[1].split("/")];
+        path = decodeURIComponent(location.hash.slice(1)).match(/^\/?(.*)\/?$/)[1].split("/");
       }
       // // $("main .header .dir");
       // let renderer = new marked.Renderer();
